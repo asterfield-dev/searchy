@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	"searchy/internal/i18n"
 	"searchy/internal/search"
@@ -111,11 +111,11 @@ func (h *Handlers) onDownloadCallback(ctx context.Context, cq *tg.CallbackQuery,
 		h.answerCB(ctx, cq.ID, i18n.T(lang, "download.unavailable"), true)
 		return
 	}
-	if cq.Message.MessageID == 0 {
+	if cq.Message == nil || cq.Message.MessageID == 0 {
 		h.answerCB(ctx, cq.ID, i18n.T(lang, "download.expired"), true)
 		return
 	}
-	msg := &cq.Message
+	msg := cq.Message
 	enqueue := h.vido.Enqueue
 	if kind == "retry" {
 		enqueue = h.vido.EnqueueRetry

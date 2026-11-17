@@ -21,7 +21,7 @@ core connection exposes only the shared functions and bridge API granted to
   command-menu registration), the `/healthz` server, and graceful shutdown.
 - `internal/config`: environment parsing with defaults for every value.
 - `internal/httpx`: tuned outbound search HTTP transport. Telegram long polling
-  stays in `FreshLabDev/tg`, whose held-open connections need different timeouts.
+  stays in `asterfield-dev/tg`, whose held-open connections need different timeouts.
 - `internal/search`: the media-search domain model (`MediaResult`), shared
   `Backend`/`PageRequest`/`Page` contract, source continuation contract, and
   `LegacyBackend` adapter for the existing `Aggregator`. The latter retains

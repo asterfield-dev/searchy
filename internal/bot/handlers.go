@@ -15,7 +15,7 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 	lru "github.com/hashicorp/golang-lru/v2/expirable"
 
 	"searchy/internal/core"
@@ -267,7 +267,7 @@ func (h *Handlers) onCallback(ctx context.Context, cq *tg.CallbackQuery) {
 		h.answerCB(ctx, cq.ID, i18n.T(h.langCached(&cq.From), "menu.notyours"), true)
 		return
 	}
-	if cq.Message.MessageID == 0 { // inaccessible (too old)
+	if cq.Message == nil || cq.Message.MessageID == 0 { // inaccessible (too old)
 		h.answerCB(ctx, cq.ID, "", false)
 		return
 	}

@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	"searchy/internal/collage"
 	"searchy/internal/i18n"
@@ -290,7 +290,7 @@ func (h *Handlers) sendGridPick(ctx context.Context, chatID int64, threadID int,
 // onGridCallback routes the grid buttons. Anyone in a group may use them (the
 // results are shared), so there's no owner check here.
 func (h *Handlers) onGridCallback(ctx context.Context, cq *tg.CallbackQuery, tok, action string, arg int) {
-	if cq.Message.MessageID == 0 {
+	if cq.Message == nil || cq.Message.MessageID == 0 {
 		h.answerCB(ctx, cq.ID, "", false)
 		return
 	}

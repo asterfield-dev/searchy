@@ -11,7 +11,7 @@
 # real ones into the image. SEARCHY_IMAGE must name an immutable GHCR
 # reference, digest for preference:
 #
-#   SEARCHY_IMAGE=ghcr.io/freshlabdev/searchy@sha256:<digest>
+#   SEARCHY_IMAGE=ghcr.io/asterfield-dev/searchy@sha256:<digest>
 #
 # A tag is accepted but a digest is what makes a rollback exact.
 name: searchy
