@@ -28,7 +28,7 @@ ARG VERSION=1.0.0-alpha.2
 ARG COMMIT=none
 LABEL org.opencontainers.image.version="${VERSION}" \
       org.opencontainers.image.revision="${COMMIT}" \
-      org.opencontainers.image.source="https://github.com/FreshLabDev/searchy"
+      org.opencontainers.image.source="https://github.com/asterfield-dev/searchy"
 COPY --from=build /out/searchy /usr/local/bin/searchy
 
 EXPOSE 8081

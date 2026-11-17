@@ -15,7 +15,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	"searchy/internal/i18n"
 	"searchy/internal/search"

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	"searchy/internal/buildinfo"
 	"searchy/internal/db"
@@ -289,7 +289,7 @@ func aboutPanel(lang string, owner int64, inGroup bool) (string, *tg.InlineKeybo
 	b.WriteString("\n\n")
 	b.WriteString(blockquote(
 		aboutField(lang, "about.field.search", i18n.T(lang, "about.value.search")),
-		aboutField(lang, "about.field.source", `<a href="https://github.com/FreshLabDev/searchy">FreshLabDev/searchy</a> · Apache-2.0`),
+		aboutField(lang, "about.field.source", `<a href="https://github.com/asterfield-dev/searchy">asterfield-dev/searchy</a> · Apache-2.0`),
 		aboutField(lang, "about.field.admin", `<a href="https://t.me/amtiyo">@amtiyo</a>`),
 	))
 	kb := &tg.InlineKeyboardMarkup{InlineKeyboard: [][]tg.InlineKeyboardButton{

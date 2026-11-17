@@ -19,7 +19,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	bothandlers "searchy/internal/bot"
 	"searchy/internal/buildinfo"

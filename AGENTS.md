@@ -3,7 +3,7 @@
 This file is for coding agents working on searchy. Keep the project minimal,
 private by design, and production-minded.
 
-- All Telegram traffic goes through `github.com/FreshLabDev/tg` — startup
+- All Telegram traffic goes through `github.com/asterfield-dev/tg` — startup
   (getMe, deleteWebhook, the readiness wait, the capability preflight), the
   poll loop, and every send. There is no second Telegram library and no
   private HTTP client; a method the module lacks goes through `tg.Call` or

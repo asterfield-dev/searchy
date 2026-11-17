@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	"searchy/internal/i18n"
 	vidobridge "searchy/internal/vido"
@@ -286,7 +286,7 @@ func (h *Handlers) sendOperation(ctx context.Context, delivery *vidobridge.Deliv
 					media = append(media, tg.InputMediaDocument{Media: inputFile(item.Source), DisableContentTypeDetection: true})
 				}
 			}
-			return h.api.SendMediaGroup(ctx, chatID, media, threadID)
+			return h.api.SendMediaGroup(ctx, chatID, media, tg.MediaGroupOptions{ThreadID: threadID})
 		case "text":
 			msg, err := h.api.SendTextWithPreview(ctx, chatID, threadID, op.Text,
 				&tg.LinkPreviewOptions{IsDisabled: op.DisableWebPagePreview}, markup)

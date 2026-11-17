@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	"searchy/internal/buildinfo"
 	"searchy/internal/db"
@@ -61,7 +61,7 @@ func TestAboutPanelStatesTheVersionAndNoBuildStamp(t *testing.T) {
 // two controls for one action.
 func TestAboutPanelLinksTheRepositoryInTextAndNotAsAButton(t *testing.T) {
 	text, kb := aboutPanel("ru", 1, false)
-	if !strings.Contains(text, `<a href="https://github.com/FreshLabDev/searchy">`) {
+	if !strings.Contains(text, `<a href="https://github.com/asterfield-dev/searchy">`) {
 		t.Fatalf("about text has no repository link: %q", text)
 	}
 	if !strings.Contains(text, "Apache-2.0") {

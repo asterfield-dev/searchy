@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/FreshLabDev/tg"
+	"github.com/asterfield-dev/tg"
 
 	"searchy/internal/i18n"
 	"searchy/internal/search"
@@ -336,7 +336,7 @@ func TestGridBackendWaitsForPoolAndPaginatesLocally(t *testing.T) {
 	}
 	h.onGridCallback(context.Background(), &tg.CallbackQuery{
 		ID: "page", From: tg.User{ID: 456},
-		Message: tg.Message{MessageID: 10, MessageThreadID: 7, Chat: tg.Chat{ID: -42, Type: tg.ChatSupergroup}},
+		Message: &tg.Message{MessageID: 10, MessageThreadID: 7, Chat: tg.Chat{ID: -42, Type: tg.ChatSupergroup}},
 	}, tok, "p", 1)
 	receiveTelegramCall(t, calls, "editMessageMedia")
 	if requests != 1 {
