@@ -11,6 +11,32 @@ See [`docs/versioning.md`](docs/versioning.md) for what the numbers mean and
 
 ## Unreleased
 
+## v1.0.1 - 2026-11-17
+
+The GitHub organization FreshLabDev is now asterfield-dev, and the bot moves
+with it. Nothing a person sees in Telegram changes.
+
+### Changed
+
+- **Images are published as `ghcr.io/asterfield-dev/searchy`.** The
+  organization was renamed, and GitHub Container Registry does not redirect
+  the old name: `ghcr.io/freshlabdev/searchy` answers 403. Point the
+  deployment's image at the new path; every earlier digest is there under it
+  too.
+- tg moves from `v0.1.0` to `v0.4.0-alpha.2`, whose module path is
+  `github.com/asterfield-dev/tg`. A press under one of searchy's inline
+  results now arrives without a message instead of an empty one; the download,
+  grid and menu buttons check for that before reading it, so such a press is
+  answered as before.
+- Links, the module path and the docs point at `github.com/asterfield-dev`.
+  Old links still redirect.
+
+### Known Limitations
+
+- Released as a stable patch without a pre-release first, at the owner's
+  request: the change is the organization rename and the tg upgrade, checked
+  by the full test suite, not by a run on a test bot.
+
 ## v1.0.0 - 2026-11-14
 
 searchy searches by itself. The private SearXNG instance is no longer needed:
@@ -240,7 +266,7 @@ changes is that it can now be given the things the shared client gets.
 
 ### Changed
 
-- Depends on the stable `github.com/FreshLabDev/tg` v0.1.0.
+- Depends on the stable `github.com/asterfield-dev/tg` v0.1.0.
 
 - **`/start` is a different screen in a group than in a DM.** A DM is the
   user's own space, so it keeps language and personal statistics and has no
@@ -269,7 +295,7 @@ changes is that it can now be given the things the shared client gets.
 - Navigation reads `Back` and `Close`, without the `⬅` and `✖`.
 - `homePanel` is assembled the way every other panel is, through `header()` and
   `blockquote()`, instead of concatenating three keys by hand.
-- **Searchy runs entirely on `github.com/FreshLabDev/tg`.**
+- **Searchy runs entirely on `github.com/asterfield-dev/tg`.**
   `github.com/go-telegram/bot` is gone: the poll loop, every send, the inline
   answers and the Vido delivery bridge all go through the family's own client.
   Searchy was the last bot on a third-party library, which cost it everything
@@ -330,7 +356,7 @@ changes is that it can now be given the things the shared client gets.
 
 ### Changed
 
-- Startup goes through `github.com/FreshLabDev/tg`, the client shared by the
+- Startup goes through `github.com/asterfield-dev/tg`, the client shared by the
   bot family. Searchy keeps `go-telegram/bot` for polling and handlers, but
   the 170 lines of hand-rolled HTTP around it -- getMe with its own retry
   ladder, deleteWebhook, endpoint building and two error types -- are gone,
